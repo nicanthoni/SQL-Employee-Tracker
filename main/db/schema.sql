@@ -32,6 +32,10 @@ CREATE TABLE employee (
     manager_id INT NOT NULL,
     PRIMARY KEY(id)
     FOREIGN KEY(role_id) REFERENCES role(id)
-)
+    FOREIGN KEY(manager_id) REFERENCES employee(id)  -- ??? - 'to hold reference to another employee that 
+    -- is the manager of the current employee (null if the employee has no manager)'
+    ON DELETE SET NULL
+);
+
 
 -- SHOULD ALL THE ID VALUES BE AUTO_INCREMENTED IN EACH CASE HERE OR ISSUES CAN BE CAUSED?
