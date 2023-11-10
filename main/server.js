@@ -1,5 +1,4 @@
 // is there a better file name for this? No need for express right?
-
 const mysql = require('mysql2');
 
 const db = mysql.createConnection (
