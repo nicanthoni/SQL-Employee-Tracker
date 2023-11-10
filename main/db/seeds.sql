@@ -19,6 +19,3 @@ VALUES ("Trinh", "Nguyen", 4, null),
 DESCRIBE department;
 DESCRIBE role;
 DESCRIBE employee;
-
-
--- how should we seed the 'MANAGER_ID' here in the employee table? -- 

@@ -13,7 +13,7 @@ const cliQuestion = [
     }
 ];
 
-// TODO: Create a function to initialize app
+// function to initialize app
 function init() {
     inquirer
         .prompt(cliQuestion)
@@ -31,6 +31,15 @@ function init() {
                     break;
                 case "Add a department":
                     addDepartment();
+                    break;
+                case "Add a role":
+                    addRole();
+                    break;
+                case "Add an employee":
+                    addEmployee();
+                    break;
+                case "Update an employee role":
+                    updateRole();
                     break;
                 default:
                     break;
@@ -63,13 +72,13 @@ function viewAllEmployees() {
 function addDepartment() {
     inquirer
         .prompt([{
-            name: "departmentName",
+            name: "name",
             message: "What is the name of the Department?"
         }])
         .then(response => {
-            db.addDepartment(response.departmentName)
+            db.addDepartment(response.name)
                 .then(() => {
-                    console.table(response.departmentName);
+                    console.table(response.name);
                 })
         })
 }

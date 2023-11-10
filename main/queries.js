@@ -1,5 +1,3 @@
-// contains functions for performing specific SQL queries you'll need to use. 
-// A constructor function or class could be helpful for organizing these
 const connection = require('./connection');
 
 
@@ -20,7 +18,10 @@ class Queries {
         return this.connection.promise().query("SELECT * FROM employee");
     }
     addDepartment(department) {
-        return this.connection.promise().query("INSERT INTO department SET ?", department);
+        let deptData = {
+            name: department
+        }
+        return this.connection.promise().query("INSERT INTO department SET ?", deptData);
     }
 };
 
