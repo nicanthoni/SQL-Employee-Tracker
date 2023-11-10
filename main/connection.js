@@ -1,4 +1,3 @@
-// is there a better file name for this? No need for express right?
 const mysql = require('mysql2');
 
 const db = mysql.createConnection (
@@ -11,5 +10,8 @@ const db = mysql.createConnection (
     console.log('Connected to the org_db database.')
 );
 
+db.connect(function(err) {
+    if (err) throw err;
+});
 // 
-
+module.exports = db;

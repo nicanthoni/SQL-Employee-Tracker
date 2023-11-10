@@ -1,22 +1,39 @@
 // contains functions for performing specific SQL queries you'll need to use. 
 // A constructor function or class could be helpful for organizing these
+const connection = require('./connection');
+
 
 class Queries {
-    constructor(sqlQuery) {
-        this.sqlQuery = sqlQuery;
+    constructor(connection) {
+        this.connection = connection;
+    }
+
+    viewDepartments() {
+        return this.connection.promise().query("SELECT * FROM department");
+    }
+
+    viewRoles() {
+        return this.connection.promise().query("SELECT * FROM role");
+    }
+
+    viewEmployees() {
+        return this.connection.promise().query("SELECT * FROM employee");
+    }
+    addDepartment(department) {
+        return this.connection.promise().query("INSERT INTO department SET ?", department);
     }
 };
 
-class viewDepartments extends Queries {};
 
-class viewRoles extends Queries {};
 
-class viewEmployees extends Queries {};
+// any needed joins go directly in above function
 
-class addDepartment extends Queries {};
+//  viewDepartments   {};
+//  viewRoles   {};
+//  viewEmployees   {};
+//  addDepartment   {};
+//  addRole   {};
+//  addEmployee   {};
+//  updateEmployeeRole   {};
 
-class addRole extends Queries {};
-
-class addEmployee extends Queries {};
-
-class updateEmployeeRole extends Queries {};
+module.exports = new Queries(connection);
