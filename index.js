@@ -29,7 +29,7 @@ function init() {
                 case "View all employees":
                     viewAllEmployees();
                     break;
-                    case "Add a department":
+                case "Add a department":
                     addDepartment();
                     break;
                 default:
@@ -59,14 +59,12 @@ function viewAllEmployees() {
         })
 }
 
-
-
-// add / update  fucntions need inquirer prompt
+// "add/update" functions need inquirer prompt
 function addDepartment() {
     inquirer
         .prompt([{
             name: "departmentName",
-            message: "Type the name of the department"
+            message: "What is the name of the Department?"
         }])
         .then(response => {
             db.addDepartment(response.departmentName)

@@ -24,16 +24,14 @@ class Queries {
     }
 };
 
+// any needed 'joins' go directly in a function above
 
-
-// any needed joins go directly in above function
-
-//  viewDepartments   {};
-//  viewRoles   {};
-//  viewEmployees   {};
-//  addDepartment   {};
-//  addRole   {};
-//  addEmployee   {};
-//  updateEmployeeRole   {};
+//  viewDepartments {};
+//  viewRoles {};
+//  viewEmployees {};
+//  addDepartment {};
+//  addRole {};
+//  addEmployee {};
+//  updateEmployeeRole {};
 
 module.exports = new Queries(connection);
