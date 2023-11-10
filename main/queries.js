@@ -18,11 +18,11 @@ class Queries {
         return this.connection.promise().query("SELECT * FROM employee");
     }
     addDepartment(department) {
-        let deptData = {
-            name: department
-        }
+        let deptData = { name: department }
         return this.connection.promise().query("INSERT INTO department SET ?", deptData);
     }
+
+    
 };
 
 // any needed 'joins' go directly in a function above
