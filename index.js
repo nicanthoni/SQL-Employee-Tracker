@@ -10,3 +10,13 @@ const cliQuestion = [
     }
 ];
 
+// TODO: Create a function to initialize app
+
+// function init () {
+//     inquirer
+//     .prompt(cliQuestion)
+//     .then
+// }
+
+
+// init ();
