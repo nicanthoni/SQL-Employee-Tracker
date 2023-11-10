@@ -13,5 +13,9 @@ VALUES ("Nic", "Diaz", 5, 10),
        ("Libby", "Lee", 5, 11),
        ("Paul", "Yannucci", 4, 9); 
 
+DESCRIBE department;
+DESCRIBE role;
+DESCRIBE employee;
+
 
 -- how should we seed the 'MANAGER_ID' here in the employee table? -- 
