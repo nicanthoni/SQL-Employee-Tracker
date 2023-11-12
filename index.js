@@ -82,4 +82,33 @@ function addDepartment() {
                 })
         })
 }
+
+// WHEN I choose to add a role
+// THEN I'm'prompted to enter the name, salary, & department for the role & that role is added to the db.
+function addRole() {
+    inquirer
+        .prompt([{
+            name: "title",
+            message: "What is the name of the Role?"
+        },
+        {
+            name: "salary",
+            message: "What is the salary for the role?"
+        },
+        {
+            name: "department_id",
+            message: "What's the single digit ID of the department the role belongs to?" 
+        }])
+        .then(response => {
+
+            const { title, salary, department_id } = response;
+
+            db.addRole(title, salary, department_id)
+                .then(() => {
+                    console.table([title, salary, department_id]);
+                })
+        })
+}
+
+
 init();
