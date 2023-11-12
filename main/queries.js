@@ -29,6 +29,16 @@ class Queries {
         }
         return this.connection.promise().query("INSERT INTO role SET ?", roleData);
     }
+    addEmployee(first_name, last_name, role_id, manager_id) {
+        let employeeData = { 
+            first_name: first_name,
+            last_name: last_name,
+            role_id: role_id, 
+            manager_id: manager_id  
+        }
+        return this.connection.promise().query("INSERT INTO employee SET ?", employeeData);
+    }
+
 };
 
 // any needed 'joins' go directly in a function above

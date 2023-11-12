@@ -83,8 +83,6 @@ function addDepartment() {
         })
 }
 
-// WHEN I choose to add a role
-// THEN I'm'prompted to enter the name, salary, & department for the role & that role is added to the db.
 function addRole() {
     inquirer
         .prompt([{
@@ -110,5 +108,38 @@ function addRole() {
         })
 }
 
+function addEmployee() {
+    inquirer
+        .prompt([{
+            name: "first_name",
+            message: "What is the employee's first name"
+        },
+        {
+            name: "last_name",
+            message: "What is the employee's last name"
+        },
+        {
+            name: "role_id",
+            message: "What's the numerical ID of the employees the role?" 
+        },
+        {
+            name: "manager_id",
+            message: "What's the numerical ID of the Manager which the employee reports to?" 
+        }
+    ])
+        .then(response => {
+
+            const { first_name, last_name, role_id, manager_id } = response;
+
+            db.addEmployee(first_name, last_name, role_id, manager_id)
+                .then(() => {
+                    console.table([first_name, last_name, role_id, manager_id]);
+                })
+        })
+}
+
+function updateRole() {
+
+}
 
 init();
