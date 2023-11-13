@@ -1,5 +1,4 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
 const db = require('./main/queries');
 const cTable = require('console.table');
 

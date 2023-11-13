@@ -50,9 +50,5 @@ class Queries {
     };
 };
 
-//to select an employee to update and their new role and this information is updated in the db.
-
-
-
 
 module.exports = new Queries(connection);
