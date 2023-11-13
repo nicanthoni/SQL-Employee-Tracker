@@ -119,12 +119,16 @@ function addEmployee() {
             message: "What is the employee's last name"
         },
         {
+            type: 'list',
             name: "role_id",
-            message: "What's the numerical ID of the employees the role?" 
+            message: "Select the employees role ID:" ,
+            choices: [1,2,3,4]
         },
         {
+            type: 'list',
             name: "manager_id",
-            message: "What's the numerical ID of the Manager which the employee reports to?" 
+            message: "Select the ID of the employee's Manager:",
+            choices: [1]
         }
     ])
         .then(response => {
@@ -139,7 +143,35 @@ function addEmployee() {
 }
 
 function updateRole() {
+    inquirer
+    .prompt([{
+            type: 'list',
+            name: "first_name",
+            message: "Select the employees first name:",
+            choices: ["Trinh", "Nic", "Libby", "Paul"]
+    },
+    {
+        type: 'list',
+        name: "last_name",
+        message: "Select the employees last name:",
+        choices: ["Nguyen", "Diaz", "Lee", "Yannucci"]
+    },
+    {
+        type: 'list',
+        name: "role_id",
+        message: "Select their new role ID:",
+        choices: [1, 2, 3, 4]
+    }
+])
+    .then(response => {
 
+        const { first_name, last_name, role_id } = response;
+
+        db.addEmployee(first_name, last_name, role_id)
+            .then(() => {
+                console.table([first_name, last_name, role_id]);
+            })
+    })
 }
 
 init();
