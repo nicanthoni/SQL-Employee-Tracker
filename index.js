@@ -167,7 +167,7 @@ function updateRole() {
 
         const { first_name, last_name, role_id } = response;
 
-        db.addEmployee(first_name, last_name, role_id)
+        db.updateEmployeeRole(first_name, last_name, role_id)
             .then(() => {
                 console.table([first_name, last_name, role_id]);
             })
