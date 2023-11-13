@@ -67,7 +67,6 @@ function viewAllEmployees() {
         })
 }
 
-// "add/update" functions need inquirer prompt
 function addDepartment() {
     inquirer
         .prompt([{
