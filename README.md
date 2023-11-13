@@ -4,7 +4,7 @@
 * This project exists to build a content management systems (CMS) that enables non-developers to easily view and interact with information stored in databases.
 
 ## Demo
-Demo Video: 
+Demo Video: https://drive.google.com/file/d/1ximU5DlUf1R8Pr81-J8R1kCa08gv0Nfc/view
 
 ## Tech/framework used
 * Javascript, nodejs, and npm (inquirer, mysql2).
